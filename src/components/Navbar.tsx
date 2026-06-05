@@ -28,8 +28,8 @@ export default function Navbar() {
     >
       <div className="container-x">
         <nav
-          className={`flex items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-300 ${
-            scrolled ? "glass shadow-soft" : "bg-transparent"
+          className={`glass flex items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-300 ${
+            scrolled ? "shadow-soft" : "shadow-sm"
           }`}
         >
           <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>

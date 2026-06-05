@@ -4,13 +4,14 @@ import {
   ArrowLeft,
   ArrowRight,
   Target,
-  ListChecks,
-  Paperclip,
   Bot,
   Lightbulb,
   Wrench,
-  ImageOff,
-  ExternalLink,
+  CheckCircle2,
+  FileText,
+  Download,
+  ClipboardList,
+  Eye,
 } from "lucide-react";
 import Reveal from "../components/Reveal";
 import { projects } from "../data/projects";
@@ -77,14 +78,14 @@ export default function ProjectDetail() {
           <div className="mx-auto max-w-3xl space-y-6">
             {/* Mục tiêu */}
             <Reveal>
-              <Block icon={Target} title="Mục tiêu của dự án" accent={p.gradient}>
+              <Block icon={Target} title="Mục tiêu của bài" accent={p.gradient}>
                 <p className="text-ink-soft">{p.objective}</p>
               </Block>
             </Reveal>
 
-            {/* Quá trình */}
+            {/* Yêu cầu / các bước */}
             <Reveal>
-              <Block icon={ListChecks} title="Tóm tắt quá trình thực hiện" accent={p.gradient}>
+              <Block icon={ClipboardList} title="Nội dung & các bước thực hiện theo yêu cầu" accent={p.gradient}>
                 <ol className="space-y-3">
                   {p.steps.map((s, i) => (
                     <li key={i} className="flex gap-3">
@@ -95,6 +96,13 @@ export default function ProjectDetail() {
                     </li>
                   ))}
                 </ol>
+                {p.requirementImg && (
+                  <img
+                    src={p.requirementImg}
+                    alt="Ảnh yêu cầu đề bài"
+                    className="mt-5 w-full rounded-2xl border border-slate-200"
+                  />
+                )}
               </Block>
             </Reveal>
 
@@ -109,34 +117,70 @@ export default function ProjectDetail() {
               </Block>
             </Reveal>
 
-            {/* Sản phẩm */}
+            {/* Minh chứng đã nộp */}
             <Reveal>
-              <Block icon={Paperclip} title="Sản phẩm đính kèm" accent={p.gradient}>
-                <div className="rounded-2xl border-2 border-dashed border-brand-300 bg-brand-50/60 p-5">
-                  <div className="flex items-center gap-3 text-brand-700">
-                    <ImageOff className="h-5 w-5 flex-none" />
-                    <p className="text-sm">
-                      <b>Gợi ý:</b> {p.product}
-                    </p>
+              <Block icon={CheckCircle2} title="Minh chứng đã nộp bài" accent={p.gradient}>
+                {p.submission ? (
+                  <div className="space-y-4">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 px-3 py-1 text-xs font-bold text-emerald-700">
+                        <CheckCircle2 className="h-3.5 w-3.5" /> {p.submission.status}
+                      </span>
+                      <span className="text-sm text-ink-muted">
+                        Thời gian nộp: <b className="text-ink-soft">{p.submission.submittedAt}</b>
+                      </span>
+                    </div>
+
+                    {/* Ảnh minh chứng đã nộp */}
+                    {p.proofImg && (
+                      <figure>
+                        <img
+                          src={p.proofImg}
+                          alt="Ảnh minh chứng đã nộp bài"
+                          className="w-full rounded-2xl border border-slate-200 shadow-soft"
+                          onError={(e) => {
+                            const fig = e.currentTarget.closest("figure");
+                            if (fig) (fig as HTMLElement).style.display = "none";
+                          }}
+                        />
+                        <figcaption className="mt-2 text-center text-xs text-ink-muted">
+                          Ảnh chụp màn hình xác nhận đã nộp bài trên LMS
+                        </figcaption>
+                      </figure>
+                    )}
+
+                    {/* Tệp bài làm */}
+                    <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                      <div className="grid h-11 w-11 flex-none place-items-center rounded-xl bg-blue-100 text-blue-600">
+                        <FileText className="h-6 w-6" />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate font-semibold text-ink">{p.submission.fileName}</p>
+                        <p className="text-xs text-ink-muted">Tệp bài làm đã nộp trên hệ thống LMS</p>
+                      </div>
+                    </div>
+
+                    {/* 2 nút: Xem & Tải */}
+                    <div className="flex flex-wrap gap-3">
+                      <a
+                        href={`https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(
+                          p.submission.fileUrl
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-primary"
+                      >
+                        <Eye className="h-4 w-4" /> Xem bài làm
+                      </a>
+                      <a href={p.submission.fileUrl} download className="btn-outline">
+                        <Download className="h-4 w-4" /> Tải về (.docx)
+                      </a>
+                    </div>
                   </div>
-                  <p className="mt-3 text-xs text-ink-muted">
-                    Đặt ảnh vào <code className="rounded bg-white px-1.5 py-0.5 text-brand-700">public/img/</code> và file vào{" "}
-                    <code className="rounded bg-white px-1.5 py-0.5 text-brand-700">public/files/</code>, rồi gửi tôi tên file để gắn link / hiển thị ảnh.
-                  </p>
-                </div>
-                {p.productUrl ? (
-                  <a
-                    href={p.productUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary mt-4"
-                  >
-                    <ExternalLink className="h-4 w-4" /> Xem bài làm trên LMS
-                  </a>
                 ) : (
-                  <span className="btn-outline mt-4 cursor-not-allowed opacity-60">
-                    <Paperclip className="h-4 w-4" /> Chưa gắn link LMS
-                  </span>
+                  <div className="rounded-2xl border-2 border-dashed border-brand-300 bg-brand-50/60 p-5 text-sm text-brand-800">
+                    Chưa cập nhật minh chứng cho bài này.
+                  </div>
                 )}
               </Block>
             </Reveal>

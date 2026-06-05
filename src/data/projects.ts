@@ -1,3 +1,10 @@
+export type Submission = {
+  fileName: string;
+  submittedAt: string; // thời gian nộp
+  status: string; // trạng thái (vd: Đã nộp · Đang chờ chấm)
+  fileUrl: string; // link tải/xem file bài làm (CDN)
+};
+
 export type Project = {
   id: number;
   slug: string;
@@ -8,12 +15,13 @@ export type Project = {
   gradient: string; // tailwind gradient classes
   objective: string;
   steps: string[];
-  product: string; // gợi ý sản phẩm đính kèm
-  productType: "file" | "image" | "video" | "link";
-  productUrl: string; // ★ Dán LINK LMS của bài tập vào đây (để "" nếu chưa có)
+  tools: string[];
+  lmsUrl: string; // link trang bài trên LMS (cần đăng nhập) — để "" nếu chưa có
+  submission: Submission | null; // thông tin bài đã nộp — null nếu chưa có
+  requirementImg?: string; // (tuỳ chọn) ảnh chụp yêu cầu đề bài
+  proofImg?: string; // (tuỳ chọn) ảnh chụp minh chứng đã nộp
   aiNote: string;
   lesson: string;
-  tools: string[];
 };
 
 export const SITE = {
@@ -31,24 +39,40 @@ export const projects: Project[] = [
     slug: "bai-1-quan-ly-tep-thu-muc",
     task: "Nhiệm vụ 1",
     title: "Máy tính & thiết bị ngoại vi",
-    short: "Thao tác với thiết bị và quản lý tệp / thư mục một cách khoa học.",
+    short: "Thao tác cơ bản với tệp tin và thư mục một cách thành thạo.",
     icon: "HardDrive",
     gradient: "from-cyan-400 to-blue-600",
     objective:
-      "Nắm vững cách sử dụng máy tính & thiết bị ngoại vi; tổ chức, quản lý tệp và thư mục khoa học để lưu trữ tài liệu học tập ngành Y hiệu quả.",
+      "Rèn luyện kỹ năng tạo, đổi tên, sao chép, di chuyển, xóa tệp tin và thư mục một cách thành thạo trên hệ điều hành Windows (có thể điều chỉnh cho macOS/Linux).",
     steps: [
-      "[Bước 1] — Ví dụ: thiết kế cây thư mục theo môn học / học kỳ.",
-      "[Bước 2] — Đặt tên tệp theo quy tắc nhất quán (ngày_chủđề_phiênbản).",
-      "[Bước 3] — Sao lưu dữ liệu & kết nối thiết bị ngoại vi (USB, máy in).",
+      "Mở File Explorer (phím tắt Windows + E).",
+      "Truy cập ổ đĩa/thư mục: This PC → ổ D: (hoặc thư mục Documents).",
+      "Tạo thư mục mới đặt tên: ThucHanh_HoangThanhTra.",
+      "Vào thư mục vừa tạo.",
+      "Tạo tệp văn bản GhiChu.txt (New → Text Document).",
+      "Đổi tên tệp thành GhiChuQuanTrong.txt (Rename).",
+      "Tạo thư mục con TaiLieu bên trong.",
+      "Sao chép GhiChuQuanTrong.txt (Copy) rồi dán (Paste) vào thư mục TaiLieu.",
+      "Di chuyển: tạo DiChuyen.txt rồi Cut & Paste vào thư mục TaiLieu.",
+      "Xóa tệp GhiChuQuanTrong.txt trong TaiLieu → chuyển vào Thùng rác.",
+      "Xóa vĩnh viễn DiChuyen.txt bằng Shift + Delete.",
+      "Khôi phục GhiChuQuanTrong.txt từ Thùng rác (Restore).",
     ],
-    product: "[Ảnh chụp cây thư mục đã tổ chức + file PDF mô tả]",
-    productType: "image",
-    productUrl: "", // ← dán link LMS Bài 1
+    tools: ["Windows", "File Explorer"],
+    lmsUrl:
+      "https://lms.vnu.edu.vn/learn/lop-hoc/chi-tiet/09600b64-537c-43d3-a190-5f54527d21ec",
+    submission: {
+      fileName: "hoang-thanh-tra.docx",
+      submittedAt: "09/03/2026 · 11:48",
+      status: "Đã nộp · Đang chờ chấm",
+      fileUrl:
+        "https://cdnlms.vnu.edu.vn/dhqg.file.api/uploads/lms/document/22100161/20260309/tmpkrvxdi_hoang-thanh-tra.docx",
+    },
+    proofImg: "/img/bai1-minhchung.png",
     aiNote:
-      "[Ghi rõ nếu có dùng AI/nguồn tham khảo; hoặc: không sử dụng AI cho bài này.]",
+      "Bài tập thực hành thao tác trực tiếp trên hệ điều hành Windows, không sử dụng công cụ AI. Toàn bộ ảnh minh hoạ trong bài nộp do chính tôi chụp màn hình trong quá trình thực hiện.",
     lesson:
-      "[Bạn học được gì? Kỹ năng quản lý dữ liệu giúp ích gì cho việc học/nghiên cứu y khoa?]",
-    tools: ["File Explorer", "OneDrive / Google Drive"],
+      "Thành thạo các thao tác quản lý tệp/thư mục là nền tảng để tổ chức tài liệu học tập y khoa một cách khoa học, tránh thất lạc dữ liệu và làm việc hiệu quả hơn.",
   },
   {
     id: 2,
@@ -65,14 +89,13 @@ export const projects: Project[] = [
       "[Từ khoá & toán tử] — Sử dụng AND/OR, dấu ngoặc kép, lọc theo năm.",
       "[Đánh giá nguồn] — Tác giả, tạp chí, ngày xuất bản, số trích dẫn.",
     ],
-    product: "[Bảng đánh giá nguồn (PDF) + ảnh kết quả tìm kiếm]",
-    productType: "file",
-    productUrl: "", // ← dán link LMS Bài 2
+    tools: ["PubMed", "Google Scholar"],
+    lmsUrl: "",
+    submission: null,
     aiNote:
       "[Liệt kê các nguồn đã trích dẫn theo đúng định dạng; ghi rõ nếu dùng AI hỗ trợ.]",
     lesson:
       "[Vì sao đánh giá độ tin cậy của nguồn lại đặc biệt quan trọng với người làm Y?]",
-    tools: ["PubMed", "Google Scholar"],
   },
   {
     id: 3,
@@ -89,13 +112,12 @@ export const projects: Project[] = [
       "[Prompt v2] — Dán prompt cải tiến (vai trò, ngữ cảnh, định dạng) & kết quả tốt hơn.",
       "[Nhận xét] — Phân tích nguyên tắc giúp prompt v2 vượt trội.",
     ],
-    product: "[File so sánh prompt trước/sau (PDF)]",
-    productType: "file",
-    productUrl: "", // ← dán link LMS Bài 3
+    tools: ["ChatGPT", "Gemini", "Claude"],
+    lmsUrl: "",
+    submission: null,
     aiNote:
       "[Ghi rõ công cụ AI đã dùng — ChatGPT/Gemini/Claude, phiên bản, ngày sử dụng.]",
     lesson: "[Kỹ năng viết prompt hỗ trợ học tập & tra cứu y khoa của bạn ra sao?]",
-    tools: ["ChatGPT", "Gemini", "Claude"],
   },
   {
     id: 4,
@@ -112,14 +134,13 @@ export const projects: Project[] = [
       "[Nhiệm vụ nhóm] — Mô tả công việc nhóm đã thực hiện.",
       "[Vai trò của tôi] — Đóng góp cụ thể của bạn.",
     ],
-    product: "[Link tài liệu cộng tác (đặt quyền xem) + ảnh lịch sử chỉnh sửa]",
-    productType: "link",
-    productUrl: "", // ← dán link LMS Bài 4
+    tools: ["Google Workspace", "Trello", "Zoom / Meet"],
+    lmsUrl: "",
+    submission: null,
     aiNote:
       "[Ghi nhận đóng góp của các thành viên; nêu công cụ/nguồn đã dùng.]",
     lesson:
       "[Kỹ năng hợp tác số hỗ trợ làm việc nhóm trong môi trường y tế thế nào?]",
-    tools: ["Google Workspace", "Trello", "Zoom / Meet"],
   },
   {
     id: 5,
@@ -136,13 +157,12 @@ export const projects: Project[] = [
       "[Công cụ AI] — Ví dụ: Canva AI, Leonardo, CapCut.",
       "[Chủ đề] — Ví dụ: poster tuyên truyền rửa tay đúng cách.",
     ],
-    product: "[Ảnh/Video sản phẩm — gắn ảnh hoặc dán link YouTube/Drive]",
-    productType: "video",
-    productUrl: "", // ← dán link LMS Bài 5
+    tools: ["Canva AI", "Leonardo.ai", "CapCut"],
+    lmsUrl: "",
+    submission: null,
     aiNote:
       "[Ghi rõ công cụ AI, prompt chính, và nguồn hình ảnh/nhạc nếu có.]",
     lesson: "[Nội dung số giúp truyền thông sức khoẻ hiệu quả ra sao?]",
-    tools: ["Canva AI", "Leonardo.ai", "CapCut"],
   },
   {
     id: 6,
@@ -159,13 +179,12 @@ export const projects: Project[] = [
       "[Nguyên tắc đạo đức số] — Bảo mật dữ liệu, minh bạch nguồn.",
       "[Phòng tránh đạo văn] — Cách trích dẫn & dùng AI đúng mực.",
     ],
-    product: "[Bài phân tích / cam kết liêm chính (PDF)]",
-    productType: "file",
-    productUrl: "", // ← dán link LMS Bài 6
+    tools: ["Nguyên tắc đạo đức số", "Trích dẫn học thuật"],
+    lmsUrl: "",
+    submission: null,
     aiNote:
       "Toàn bộ Portfolio được thực hiện trung thực; mọi nội dung tham khảo & công cụ AI đều được ghi nguồn rõ ràng.",
     lesson:
       "[Vì sao đạo đức số & bảo mật dữ liệu bệnh nhân cực kỳ quan trọng trong ngành Y?]",
-    tools: ["Nguyên tắc đạo đức số", "Trích dẫn học thuật"],
   },
 ];
