@@ -16,12 +16,12 @@ export type Project = {
 };
 
 export const SITE = {
-  fullName: "[Họ và tên]",
-  major: "[Ngành Y đa khoa]",
-  school: "[Tên trường]",
+  fullName: "Hoàng Thanh Trà",
+  major: "Ngành Y Dược",
+  school: "Đại học Y Dược",
   year: "2026",
   email: "[email@cua.ban]",
-  hobbies: "[đọc sách y khoa, thể thao, công nghệ]",
+  hobbies: "Messi, đọc sách, đá bóng",
 };
 
 export const projects: Project[] = [
