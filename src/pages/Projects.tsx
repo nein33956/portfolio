@@ -42,7 +42,9 @@ export default function Projects() {
                       <div className={`grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br ${p.gradient} text-white shadow-soft`}>
                         <Icon className="h-6 w-6" />
                       </div>
-                      <span className="font-display text-4xl font-extrabold text-slate-100">
+                      <span
+                        className={`bg-gradient-to-br ${p.gradient} bg-clip-text font-display text-5xl font-extrabold text-transparent opacity-80`}
+                      >
                         {String(p.id).padStart(2, "0")}
                       </span>
                     </div>

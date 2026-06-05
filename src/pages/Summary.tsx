@@ -45,7 +45,7 @@ export default function Summary() {
                   <p>
                     Nhìn lại, tôi thấy mình đã tiến bộ rõ rệt: từ chỗ dùng công cụ một cách
                     cảm tính, nay tôi tự tin hơn nhiều khi khai thác thông tin học thuật và
-                    ứng dụng công nghệ vào việc học ngành Y Dược.
+                    ứng dụng công nghệ vào việc học ngành Y Khoa.
                   </p>
                 </div>
               </Card>
@@ -125,7 +125,7 @@ export default function Summary() {
                 <p className="mt-4 text-sm leading-relaxed text-ink-soft">
                   <b className="text-ink">Định hướng tiếp theo:</b> tôi sẽ tiếp tục rèn luyện kỹ
                   năng đánh giá nguồn và sáng tạo nội dung số, đồng thời ứng dụng năng lực số vào
-                  việc học Y Dược — tra cứu tài liệu, phác đồ điều trị và hỗ trợ nghiên cứu khoa học
+                  việc học Y Khoa — tra cứu tài liệu, phác đồ điều trị và hỗ trợ nghiên cứu khoa học
                   một cách hiệu quả, có trách nhiệm.
                 </p>
               </Card>

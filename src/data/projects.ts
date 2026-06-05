@@ -18,8 +18,8 @@ export type Project = {
 
 export const SITE = {
   fullName: "Hoàng Thanh Trà",
-  major: "Ngành Y Dược",
-  school: "Đại học Y Dược",
+  major: "Ngành Y Khoa",
+  school: "ĐH Y Dược - Đại học Quốc gia Hà Nội",
   year: "2026",
   email: "[email@cua.ban]",
   hobbies: "Messi, đọc sách, đá bóng",
