@@ -163,9 +163,13 @@ export default function ProjectDetail() {
                     {/* 2 nút: Xem & Tải */}
                     <div className="flex flex-wrap gap-3">
                       <a
-                        href={`https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(
-                          p.submission.fileUrl
-                        )}`}
+                        href={
+                          p.submission.fileUrl.toLowerCase().endsWith(".pdf")
+                            ? p.submission.fileUrl
+                            : `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(
+                                p.submission.fileUrl
+                              )}`
+                        }
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-primary"
@@ -173,7 +177,8 @@ export default function ProjectDetail() {
                         <Eye className="h-4 w-4" /> Xem bài làm
                       </a>
                       <a href={p.submission.fileUrl} download className="btn-outline">
-                        <Download className="h-4 w-4" /> Tải về (.docx)
+                        <Download className="h-4 w-4" />{" "}
+                        Tải về ({p.submission.fileUrl.toLowerCase().endsWith(".pdf") ? ".pdf" : ".docx"})
                       </a>
                     </div>
 
