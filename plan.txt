@@ -1,0 +1,68 @@
+============================================================
+KẾ HOẠCH DỰ ÁN PORTFOLIO CÁ NHÂN - MÔN NĂNG LỰC SỐ
+============================================================
+Người làm: [Sinh viên ngành Y]
+Ngày lập kế hoạch: 2026-06-05
+Hình thức: Website tĩnh HTML/CSS (đúng yêu cầu "dạng HTML")
+
+------------------------------------------------------------
+I. MỤC TIÊU SẢN PHẨM
+------------------------------------------------------------
+Xây dựng website Portfolio cá nhân tổng hợp & trình bày kết quả
+6 bài tập của môn Năng lực số. Hướng tới mức XUẤT SẮC (8.1-10):
+- Thiết kế chuyên nghiệp, sáng tạo, responsive
+- Đủ 6 bài chất lượng, thể hiện tư duy
+- Trích nguồn AI rõ ràng (liêm chính học thuật)
+
+------------------------------------------------------------
+II. CẤU TRÚC WEBSITE
+------------------------------------------------------------
+index.html        -> Trang Giới thiệu (Home)
+projects.html     -> Trang Dự án (tổng quan 6 bài, dạng card)
+summary.html      -> Trang Tổng kết
+projects/bai1..6.html -> 6 trang chi tiết bài tập
+assets/css/style.css  -> Giao diện (tông y khoa teal/trắng)
+assets/js/main.js     -> Menu mobile, hiệu ứng nhẹ
+assets/img/           -> Ảnh chụp màn hình, hình minh hoạ
+assets/files/         -> PDF / sản phẩm tải về
+README.md             -> Hướng dẫn deploy lấy URL
+
+------------------------------------------------------------
+III. ÁNH XẠ NỘI DUNG <-> RUBRIC (8 tiêu chí)
+------------------------------------------------------------
+1. Thiết kế cấu trúc Portfolio       -> toàn site + index.html
+2. NV1: Quản lý tệp & thư mục         -> bai1.html (Bài 1)
+3. NV2: Tìm kiếm & đánh giá thông tin -> bai2.html (Bài 2)
+4. NV3: Viết Prompt hiệu quả          -> bai3.html (Bài 3)
+5. NV4: Hợp tác trực tuyến            -> bai4.html (Bài 4)
+6. NV5: Sáng tạo nội dung số với AI   -> bai5.html (Bài 5)
+7. NV6: AI có trách nhiệm             -> bai6.html (Bài 6)
+8. Tổng kết & tự đánh giá bản thân    -> summary.html
+
+------------------------------------------------------------
+IV. KHUNG TRÌNH BÀY MỖI BÀI (theo rubric)
+------------------------------------------------------------
+- Mục tiêu của bài
+- Tóm tắt quá trình thực hiện
+- Sản phẩm đính kèm (ảnh/PDF/video link)
+- Trích nguồn AI / công cụ đã dùng (liêm chính học thuật)
+- Bài học rút ra
+
+------------------------------------------------------------
+V. CÁC BƯỚC THỰC HIỆN
+------------------------------------------------------------
+[ ] 1. Dựng CSS + cấu trúc thư mục assets
+[ ] 2. Trang Giới thiệu (index.html)
+[ ] 3. Trang Dự án (projects.html) - 6 card
+[ ] 4. 6 trang chi tiết bài 1-6 (placeholder)
+[ ] 5. Trang Tổng kết (summary.html)
+[ ] 6. README hướng dẫn deploy
+[ ] 7. SV thả file 6 bài vào assets/ + điền nội dung
+[ ] 8. Tinh chỉnh & deploy lấy URL, xuất đề ra PDF nộp kèm
+
+------------------------------------------------------------
+VI. NỘP BÀI (Mục VI đề bài)
+------------------------------------------------------------
+- Nộp URL website (deploy GitHub Pages / Netlify - miễn phí)
+- Lưu file đề bài dạng PDF để đối chiếu
+============================================================
