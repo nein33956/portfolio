@@ -68,7 +68,7 @@ export const projects: Project[] = [
       fileUrl:
         "https://cdnlms.vnu.edu.vn/dhqg.file.api/uploads/lms/document/22100161/20260309/tmpkrvxdi_hoang-thanh-tra.docx",
     },
-    proofImg: "/img/bai1-minhchung.png",
+    proofImg: "/img/bai1-minhchung.jpg",
     aiNote:
       "Bài tập thực hành thao tác trực tiếp trên hệ điều hành Windows, không sử dụng công cụ AI. Toàn bộ ảnh minh hoạ trong bài nộp do chính tôi chụp màn hình trong quá trình thực hiện.",
     lesson:

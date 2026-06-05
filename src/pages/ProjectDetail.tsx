@@ -176,6 +176,14 @@ export default function ProjectDetail() {
                         <Download className="h-4 w-4" /> Tải về (.docx)
                       </a>
                     </div>
+
+                    {/* Chi tiết nộp bài */}
+                    <div className="grid gap-x-6 gap-y-2.5 rounded-2xl border border-slate-100 bg-slate-50/70 p-4 text-sm sm:grid-cols-2">
+                      <Detail label="Nền tảng" value="LMS VNU · lms.vnu.edu.vn" />
+                      <Detail label="Học phần" value="Năng lực số ứng dụng" />
+                      <Detail label="Định dạng nộp" value="Tệp Word (.docx)" />
+                      <Detail label="Số lần nộp" value="Lần 1" />
+                    </div>
                   </div>
                 ) : (
                   <div className="rounded-2xl border-2 border-dashed border-brand-300 bg-brand-50/60 p-5 text-sm text-brand-800">
@@ -228,6 +236,15 @@ export default function ProjectDetail() {
         </div>
       </section>
     </>
+  );
+}
+
+function Detail({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex items-center justify-between gap-3 border-b border-slate-100 pb-2 last:border-0 sm:border-0 sm:pb-0">
+      <span className="text-ink-muted">{label}</span>
+      <span className="text-right font-semibold text-ink-soft">{value}</span>
+    </div>
   );
 }
 
