@@ -129,12 +129,14 @@ export default function Home() {
                 <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-tr from-brand-300/40 to-indigo-300/40 blur-2xl" />
                 <div className="card-surface relative w-72 overflow-hidden rounded-[2rem] p-1.5">
                   <div className="rounded-[1.6rem] bg-gradient-to-br from-brand-500 via-brand-600 to-indigo-700 p-8 text-center text-white">
-                    {/* Thay khối này bằng <img src="/avatar.jpg" .../> nếu có ảnh */}
+                    {/* Ảnh chân dung (public/img/hi.jpg) */}
                     <div className="relative mx-auto grid h-32 w-32 place-items-center">
                       <span className="absolute inset-0 rounded-full border-2 border-white/40 animate-pulse-ring" />
-                      <div className="grid h-32 w-32 place-items-center rounded-full bg-white/15 text-6xl backdrop-blur">
-                        🩺
-                      </div>
+                      <img
+                        src="/img/hi.jpg"
+                        alt="Hoàng Thanh Trà"
+                        className="h-32 w-32 rounded-full object-cover ring-4 ring-white/30 shadow-lg"
+                      />
                     </div>
                     <p className="mt-5 font-display text-xl font-bold">{SITE.fullName}</p>
                     <p className="text-sm text-white/80">{SITE.major}</p>
