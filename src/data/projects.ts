@@ -10,6 +10,7 @@ export type Project = {
   steps: string[];
   product: string; // gợi ý sản phẩm đính kèm
   productType: "file" | "image" | "video" | "link";
+  productUrl: string; // ★ Dán LINK LMS của bài tập vào đây (để "" nếu chưa có)
   aiNote: string;
   lesson: string;
   tools: string[];
@@ -42,6 +43,7 @@ export const projects: Project[] = [
     ],
     product: "[Ảnh chụp cây thư mục đã tổ chức + file PDF mô tả]",
     productType: "image",
+    productUrl: "", // ← dán link LMS Bài 1
     aiNote:
       "[Ghi rõ nếu có dùng AI/nguồn tham khảo; hoặc: không sử dụng AI cho bài này.]",
     lesson:
@@ -65,6 +67,7 @@ export const projects: Project[] = [
     ],
     product: "[Bảng đánh giá nguồn (PDF) + ảnh kết quả tìm kiếm]",
     productType: "file",
+    productUrl: "", // ← dán link LMS Bài 2
     aiNote:
       "[Liệt kê các nguồn đã trích dẫn theo đúng định dạng; ghi rõ nếu dùng AI hỗ trợ.]",
     lesson:
@@ -88,6 +91,7 @@ export const projects: Project[] = [
     ],
     product: "[File so sánh prompt trước/sau (PDF)]",
     productType: "file",
+    productUrl: "", // ← dán link LMS Bài 3
     aiNote:
       "[Ghi rõ công cụ AI đã dùng — ChatGPT/Gemini/Claude, phiên bản, ngày sử dụng.]",
     lesson: "[Kỹ năng viết prompt hỗ trợ học tập & tra cứu y khoa của bạn ra sao?]",
@@ -110,6 +114,7 @@ export const projects: Project[] = [
     ],
     product: "[Link tài liệu cộng tác (đặt quyền xem) + ảnh lịch sử chỉnh sửa]",
     productType: "link",
+    productUrl: "", // ← dán link LMS Bài 4
     aiNote:
       "[Ghi nhận đóng góp của các thành viên; nêu công cụ/nguồn đã dùng.]",
     lesson:
@@ -133,6 +138,7 @@ export const projects: Project[] = [
     ],
     product: "[Ảnh/Video sản phẩm — gắn ảnh hoặc dán link YouTube/Drive]",
     productType: "video",
+    productUrl: "", // ← dán link LMS Bài 5
     aiNote:
       "[Ghi rõ công cụ AI, prompt chính, và nguồn hình ảnh/nhạc nếu có.]",
     lesson: "[Nội dung số giúp truyền thông sức khoẻ hiệu quả ra sao?]",
@@ -155,6 +161,7 @@ export const projects: Project[] = [
     ],
     product: "[Bài phân tích / cam kết liêm chính (PDF)]",
     productType: "file",
+    productUrl: "", // ← dán link LMS Bài 6
     aiNote:
       "Toàn bộ Portfolio được thực hiện trung thực; mọi nội dung tham khảo & công cụ AI đều được ghi nguồn rõ ràng.",
     lesson:

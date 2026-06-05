@@ -28,10 +28,26 @@ export default function Summary() {
           <div className="mx-auto max-w-3xl space-y-6">
             <Reveal>
               <Card icon={Sprout} title="Trải nghiệm & cảm nhận cá nhân">
-                <p className="rounded-2xl border-2 border-dashed border-brand-300 bg-brand-50/60 p-4 text-sm text-brand-800">
-                  <b>[ĐIỀN]</b> — Chia sẻ cảm nhận về quá trình thực hiện Portfolio: điều gì
-                  thú vị, điều gì khó, bạn đã tiến bộ ra sao về năng lực số.
-                </p>
+                <div className="space-y-3 text-sm leading-relaxed text-ink-soft">
+                  <p>
+                    Quá trình thực hiện Portfolio là một hành trình thật sự thú vị đối với
+                    tôi. Khi mới bắt đầu, tôi khá lúng túng vì nghĩ "năng lực số" chỉ đơn
+                    giản là biết dùng máy tính. Nhưng càng đi qua từng bài, tôi càng nhận ra
+                    đây là cả một <b>tư duy làm việc trong môi trường số</b> — từ cách tổ
+                    chức dữ liệu, tìm và thẩm định thông tin, đến việc cộng tác và sử dụng AI.
+                  </p>
+                  <p>
+                    Điều khiến tôi hứng thú nhất là được khám phá sức mạnh của AI khi biết
+                    cách "ra lệnh" đúng, và tự tay tạo ra những sản phẩm số của riêng mình.
+                    Khó khăn lớn nhất là rèn thói quen <b>kiểm chứng nguồn</b> và trình bày
+                    kết quả một cách khoa học, minh bạch.
+                  </p>
+                  <p>
+                    Nhìn lại, tôi thấy mình đã tiến bộ rõ rệt: từ chỗ dùng công cụ một cách
+                    cảm tính, nay tôi tự tin hơn nhiều khi khai thác thông tin học thuật và
+                    ứng dụng công nghệ vào việc học ngành Y Dược.
+                  </p>
+                </div>
               </Card>
             </Reveal>
 
@@ -57,18 +73,60 @@ export default function Summary() {
 
             <Reveal>
               <Card icon={Star} title="Điểm tâm đắc & thách thức gặp phải">
-                <p className="rounded-2xl border-2 border-dashed border-brand-300 bg-brand-50/60 p-4 text-sm text-brand-800">
-                  <b>[ĐIỀN]</b> — Điểm bạn tâm đắc nhất và (các) thách thức đã vượt qua khi
-                  xây dựng Portfolio này.
-                </p>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-2xl border border-emerald-200 bg-emerald-50/60 p-4">
+                    <p className="mb-2 text-sm font-bold text-emerald-700">💚 Điều tôi tâm đắc</p>
+                    <ul className="list-disc space-y-1.5 pl-4 text-sm text-ink-soft">
+                      <li>Tự xây dựng được một <b>sản phẩm số hoàn chỉnh</b> — chính là website Portfolio này.</li>
+                      <li>Biết viết prompt hiệu quả, biến AI thành "trợ lý học tập" thực sự.</li>
+                      <li>Hiểu sâu hơn về liêm chính học thuật và đạo đức số.</li>
+                    </ul>
+                  </div>
+                  <div className="rounded-2xl border border-amber-200 bg-amber-50/60 p-4">
+                    <p className="mb-2 text-sm font-bold text-amber-700">🔥 Thách thức đã vượt qua</p>
+                    <ul className="list-disc space-y-1.5 pl-4 text-sm text-ink-soft">
+                      <li>Phân biệt nguồn tin đáng tin cậy giữa "biển" thông tin trên mạng.</li>
+                      <li>Cân bằng giữa tận dụng AI và giữ tính trung thực, tự chủ trong học tập.</li>
+                      <li>Sắp xếp thời gian để hoàn thiện đầy đủ cả 6 nhiệm vụ.</li>
+                    </ul>
+                  </div>
+                </div>
               </Card>
             </Reveal>
 
             <Reveal>
               <Card icon={BarChart3} title="Tự đánh giá bản thân">
-                <p className="rounded-2xl border-2 border-dashed border-brand-300 bg-brand-50/60 p-4 text-sm text-brand-800">
-                  <b>[ĐIỀN]</b> — Tự đánh giá mức độ đạt được theo từng năng lực số (tốt / khá /
-                  cần cải thiện) và định hướng rèn luyện tiếp theo.
+                <div className="space-y-2.5">
+                  {[
+                    { name: "Quản lý tệp & thư mục", level: "Tốt" },
+                    { name: "Tìm kiếm & đánh giá thông tin", level: "Khá" },
+                    { name: "Viết prompt & ứng dụng AI", level: "Tốt" },
+                    { name: "Hợp tác trực tuyến", level: "Tốt" },
+                    { name: "Sáng tạo nội dung số", level: "Khá" },
+                    { name: "An toàn & liêm chính học thuật", level: "Tốt" },
+                  ].map((s) => (
+                    <div
+                      key={s.name}
+                      className="flex items-center justify-between rounded-xl border border-slate-100 bg-slate-50/60 px-4 py-2.5"
+                    >
+                      <span className="text-sm font-medium text-ink-soft">{s.name}</span>
+                      <span
+                        className={`rounded-full px-3 py-0.5 text-xs font-bold ${
+                          s.level === "Tốt"
+                            ? "bg-emerald-100 text-emerald-700"
+                            : "bg-amber-100 text-amber-700"
+                        }`}
+                      >
+                        {s.level}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-4 text-sm leading-relaxed text-ink-soft">
+                  <b className="text-ink">Định hướng tiếp theo:</b> tôi sẽ tiếp tục rèn luyện kỹ
+                  năng đánh giá nguồn và sáng tạo nội dung số, đồng thời ứng dụng năng lực số vào
+                  việc học Y Dược — tra cứu tài liệu, phác đồ điều trị và hỗ trợ nghiên cứu khoa học
+                  một cách hiệu quả, có trách nhiệm.
                 </p>
               </Card>
             </Reveal>

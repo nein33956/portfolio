@@ -10,6 +10,7 @@ import {
   Lightbulb,
   Wrench,
   ImageOff,
+  ExternalLink,
 } from "lucide-react";
 import Reveal from "../components/Reveal";
 import { projects } from "../data/projects";
@@ -123,9 +124,20 @@ export default function ProjectDetail() {
                     <code className="rounded bg-white px-1.5 py-0.5 text-brand-700">public/files/</code>, rồi gửi tôi tên file để gắn link / hiển thị ảnh.
                   </p>
                 </div>
-                <a href="#" onClick={(e) => e.preventDefault()} className="btn-outline mt-4">
-                  <Paperclip className="h-4 w-4" /> [Link sản phẩm — chưa gắn]
-                </a>
+                {p.productUrl ? (
+                  <a
+                    href={p.productUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary mt-4"
+                  >
+                    <ExternalLink className="h-4 w-4" /> Xem bài làm trên LMS
+                  </a>
+                ) : (
+                  <span className="btn-outline mt-4 cursor-not-allowed opacity-60">
+                    <Paperclip className="h-4 w-4" /> Chưa gắn link LMS
+                  </span>
+                )}
               </Block>
             </Reveal>
 
