@@ -24,8 +24,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-slate-400">
-              Hành trình rèn luyện năng lực số của sinh viên ngành Y — tổng hợp 6 dự
-              án thực hành, hướng tới sử dụng công nghệ & AI một cách hiệu quả và có
+              Hành trình rèn luyện năng lực số của sinh viên ngành Y Khoa — tổng hợp 6
+              dự án thực hành, hướng tới sử dụng công nghệ & AI một cách hiệu quả và có
               trách nhiệm.
             </p>
           </div>

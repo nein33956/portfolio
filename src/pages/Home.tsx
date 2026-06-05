@@ -100,7 +100,7 @@ export default function Home() {
                 Sinh viên <b className="text-ink-soft">{SITE.major}</b>. Đây là hành
                 trình rèn luyện <b className="text-brand-700">năng lực số</b> của tôi —
                 từ quản lý dữ liệu, khai thác thông tin học thuật, đến ứng dụng AI một
-                cách có trách nhiệm trong học tập và ngành y.
+                cách có trách nhiệm trong học tập và ngành Y Khoa.
               </motion.p>
 
               <motion.div
