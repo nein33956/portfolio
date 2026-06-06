@@ -20,11 +20,11 @@ export default function Footer() {
                 <Plus className="h-5 w-5" strokeWidth={3} />
               </span>
               <span className="font-display text-lg font-extrabold text-white">
-                Portfolio Năng lực số
+                Portfolio AI và Công nghệ số
               </span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-slate-400">
-              Hành trình rèn luyện năng lực số của sinh viên ngành Y Khoa — tổng hợp 6
+              Hành trình rèn luyện AI và công nghệ số của sinh viên ngành Y Khoa — tổng hợp 6
               dự án thực hành, hướng tới sử dụng công nghệ & AI một cách hiệu quả và có
               trách nhiệm.
             </p>

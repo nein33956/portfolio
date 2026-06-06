@@ -17,7 +17,7 @@ export default function Summary() {
               Tổng kết <span className="gradient-text">hành trình</span>
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-ink-muted">
-              Trải nghiệm, kiến thức và những điều tâm đắc sau khi hoàn thành 6 dự án năng lực số.
+              Trải nghiệm, kiến thức và những điều tâm đắc sau khi hoàn thành 6 dự án AI và công nghệ số.
             </p>
           </Reveal>
         </div>
@@ -31,7 +31,7 @@ export default function Summary() {
                 <div className="space-y-3 text-sm leading-relaxed text-ink-soft">
                   <p>
                     Quá trình thực hiện Portfolio là một hành trình thật sự thú vị đối với
-                    tôi. Khi mới bắt đầu, tôi khá lúng túng vì nghĩ "năng lực số" chỉ đơn
+                    tôi. Khi mới bắt đầu, tôi khá lúng túng vì nghĩ "AI và công nghệ số" chỉ đơn
                     giản là biết dùng máy tính. Nhưng càng đi qua từng bài, tôi càng nhận ra
                     đây là cả một <b>tư duy làm việc trong môi trường số</b> — từ cách tổ
                     chức dữ liệu, tìm và thẩm định thông tin, đến việc cộng tác và sử dụng AI.
@@ -124,7 +124,7 @@ export default function Summary() {
                 </div>
                 <p className="mt-4 text-sm leading-relaxed text-ink-soft">
                   <b className="text-ink">Định hướng tiếp theo:</b> tôi sẽ tiếp tục rèn luyện kỹ
-                  năng đánh giá nguồn và sáng tạo nội dung số, đồng thời ứng dụng năng lực số vào
+                  năng đánh giá nguồn và sáng tạo nội dung số, đồng thời ứng dụng AI và công nghệ số vào
                   việc học Y Khoa — tra cứu tài liệu, phác đồ điều trị và hỗ trợ nghiên cứu khoa học
                   một cách hiệu quả, có trách nhiệm.
                 </p>

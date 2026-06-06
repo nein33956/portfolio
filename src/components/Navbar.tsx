@@ -37,7 +37,7 @@ export default function Navbar() {
               <Plus className="h-5 w-5" strokeWidth={3} />
             </span>
             <span className="font-display text-base font-extrabold text-ink">
-              Portfolio<span className="gradient-text"> Năng lực số</span>
+              Portfolio<span className="gradient-text"> AI và Công nghệ số</span>
             </span>
           </Link>
 

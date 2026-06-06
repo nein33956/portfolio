@@ -185,7 +185,7 @@ export default function ProjectDetail() {
                     {/* Chi tiết nộp bài */}
                     <div className="grid gap-x-6 gap-y-2.5 rounded-2xl border border-slate-100 bg-slate-50/70 p-4 text-sm sm:grid-cols-2">
                       <Detail label="Nền tảng" value="LMS VNU · lms.vnu.edu.vn" />
-                      <Detail label="Học phần" value="Năng lực số ứng dụng" />
+                      <Detail label="Học phần" value="AI và Công nghệ số ứng dụng" />
                       <Detail label="Định dạng nộp" value="Tệp Word (.docx)" />
                       <Detail label="Số lần nộp" value="Lần 1" />
                     </div>

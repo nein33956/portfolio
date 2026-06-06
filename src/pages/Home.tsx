@@ -18,7 +18,7 @@ import { getIcon } from "../lib/icons";
 
 const stats = [
   { big: "06", lbl: "Dự án thành phần" },
-  { big: "06", lbl: "Năng lực số cốt lõi" },
+  { big: "06", lbl: "Năng lực cốt lõi" },
   { big: "100%", lbl: "Trích nguồn minh bạch" },
   { big: "A+", lbl: "Mục tiêu chất lượng" },
 ];
@@ -42,7 +42,7 @@ const goals = [
   {
     icon: Target,
     title: "Mục tiêu học tập",
-    body: "Nắm vững năng lực số nền tảng phục vụ học tập & nghiên cứu y khoa: quản lý tài liệu khoa học, tra cứu thông tin đáng tin cậy, sử dụng AI hiệu quả và có đạo đức.",
+    body: "Nắm vững AI và công nghệ số nền tảng phục vụ học tập & nghiên cứu y khoa: quản lý tài liệu khoa học, tra cứu thông tin đáng tin cậy, sử dụng AI hiệu quả và có đạo đức.",
   },
   {
     icon: Rocket,
@@ -54,7 +54,7 @@ const goals = [
 const portfolioGoals = [
   "Thể hiện các kỹ năng số đã học qua 6 dự án thực hành cụ thể.",
   "Lưu trữ sản phẩm cá nhân có hệ thống, dễ truy cập & chia sẻ.",
-  "Ghi lại quá trình tự học và sự tiến bộ về năng lực số.",
+  "Ghi lại quá trình tự học và sự tiến bộ về AI và công nghệ số.",
   "Phản ánh tư duy học thuật: minh bạch nguồn, dùng AI có trách nhiệm.",
 ];
 
@@ -77,7 +77,7 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
               >
                 <span className="chip">
-                  <Sparkles className="h-3.5 w-3.5" /> Portfolio cá nhân · Môn Năng lực số
+                  <Sparkles className="h-3.5 w-3.5" /> Portfolio cá nhân · Môn AI và Công nghệ số
                 </span>
               </motion.div>
 
@@ -98,7 +98,7 @@ export default function Home() {
                 className="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted"
               >
                 Sinh viên <b className="text-ink-soft">{SITE.major}</b>. Đây là hành
-                trình rèn luyện <b className="text-brand-700">năng lực số</b> của tôi —
+                trình rèn luyện <b className="text-brand-700">AI và công nghệ số</b> của tôi —
                 từ quản lý dữ liệu, khai thác thông tin học thuật, đến ứng dụng AI một
                 cách có trách nhiệm trong học tập và ngành Y Khoa.
               </motion.p>
@@ -204,7 +204,7 @@ export default function Home() {
                 </h2>
                 <p className="mt-4 text-ink-muted">
                   Portfolio là nơi tôi tổng hợp, hệ thống hóa kết quả học tập và thể hiện
-                  sự trưởng thành về năng lực số trong suốt môn học.
+                  sự trưởng thành về AI và công nghệ số trong suốt môn học.
                 </p>
               </div>
               <ul className="space-y-3">
@@ -229,7 +229,7 @@ export default function Home() {
             <SectionHead
               kicker="Dự án nổi bật"
               title="6 năng lực · 6 dự án"
-              desc="Mỗi dự án tương ứng một năng lực số cốt lõi đã được rèn luyện và minh chứng."
+              desc="Mỗi dự án tương ứng một năng lực cốt lõi đã được rèn luyện và minh chứng."
             />
           </Reveal>
 
