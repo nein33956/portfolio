@@ -23,3 +23,7 @@ npm-debug.log*
 
 # Bản HTML thuần cũ (không còn dùng)
 _old_html/
+
+# Các bản portfolio cho bạn bè (mỗi bản là 1 repo GitHub riêng)
+v2-editorial/
+portfolio-*/
